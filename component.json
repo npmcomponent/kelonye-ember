@@ -1,0 +1,11 @@
+{
+  "name": "ember",
+  "dependencies": {
+    "component/jquery": "1.9.1"
+  },
+  "scripts": [
+    "index.js",
+    "lib/ember.js",
+    "lib/handlebars.js"
+  ]
+}
