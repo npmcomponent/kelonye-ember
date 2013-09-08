@@ -1,11 +1,11 @@
 Install
 ---
 
-```component install kelonye/ember```
+    $ component install kelonye/ember
 
 Usage
 ---
 
-```
-require 'ember'
+```javascript
+  require('ember');
 ```
