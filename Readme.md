@@ -9,3 +9,8 @@ Usage
 ```javascript
   require('ember');
 ```
+
+Example
+---
+
+    $ make example
