@@ -1,9 +1,8 @@
 HANDLEBARS_VERSION=3
 
-default: lib lib/ember.js lib/handlebars.js
+component = ./node_modules/component-hooks/node_modules/.bin/component
 
-lib:
-	@mkdir -p $@
+default: lib/ember.js lib/handlebars.js node_modules components public
 
 lib/ember.js:
 	@axel -o $@ http://builds.emberjs.com.s3.amazonaws.com/ember-latest.min.js
@@ -11,7 +10,19 @@ lib/ember.js:
 lib/handlebars.js:
 	@axel -o $@ http://cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.0.0-rc.$(HANDLEBARS_VERSION)/handlebars.min.js
 
-clean:
-	@rm -rf lib
+node_modules:
+	@npm install
 
-.PHONY: clean
+components:
+	@$(component) install
+
+public: lib/index.js
+	@$(component) build -n $@ -o $@
+
+example: default
+	@xdg-open example/index.html
+
+clean:
+	@rm -rf public lib/ember.js lib/handlebars.js
+
+.PHONY: clean example

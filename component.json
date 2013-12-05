@@ -4,8 +4,9 @@
   "dependencies": {
     "component/jquery": "*"
   },
+  "main": "lib/index.js",
   "scripts": [
-    "index.js",
+    "lib/index.js",
     "lib/ember.js",
     "lib/handlebars.js"
   ]
