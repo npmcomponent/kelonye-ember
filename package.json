@@ -1,8 +1,8 @@
 {
-  "name": "ember",
+  "name": "kelonye-ember",
   "version": "1.2.0",
-  "license": "MIT",
+  "main": "lib/index.js",
   "dependencies": {
-    "component-hooks": "*"
+    "component-jquery": "git://github.com/npmcomponent/component-jquery.git"
   }
 }
